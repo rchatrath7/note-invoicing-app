@@ -1,0 +1,19 @@
+{
+  "name": "note-invoicing-app",
+  "version": "1.0.0",
+  "description": "A toy app for learning Node and Vue ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchatrath7/note-invoicing-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rchatrath7/note-invoicing-app/issues"
+  },
+  "homepage": "https://github.com/rchatrath7/note-invoicing-app#readme"
+}
