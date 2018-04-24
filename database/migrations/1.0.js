@@ -37,4 +37,18 @@ module.exports = {
       db.close();
     });
   },
+
+  down: function() {
+    return new Promise(function(resolve, reject){
+      let db = new sqlite3.Database("./database/InvoiceApp.db"); 
+
+      db.serialize(function() {
+        db.run(`DROP TABLE transactions`); 
+        db.run(`DROP TABLE invoices`); 
+        db.run(`DROP TABLE users`); 
+      });
+
+      db.close()
+    });
+  },
 }; 
