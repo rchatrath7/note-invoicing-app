@@ -115,3 +115,17 @@ app.post("/invoice", multipartMiddleware, function(req, res) {
     });
   });
 });
+
+app.get("/invoice/user/:user_id", multipartMiddleware, function(req, res) {
+  let db = new sqlite3.Database("./database/InvoicingApp.db");
+  let sql = `SELECT * FROM invoices LEFT JOIN transactions ON invoices.id=transactions.invoice_id WHERE user_id='${req.params.user_id}'`; 
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      throw err; 
+    }
+    return res.json({
+      status: true, 
+      transactions: rows 
+    });
+  });
+});
